@@ -107,7 +107,7 @@ export function addVideoPreview(nodeType, options = {}) {
     }
 
     const promises = imageURLs.map((url) => {
-      if (url.startsWith('/view')) {
+      if (url.startsWith('/view') || url.startsWith(`${window.location.pathname}/view`)) {
         url = window.location.origin + url;
       }
 
